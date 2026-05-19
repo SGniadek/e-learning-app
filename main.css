@@ -1,0 +1,135 @@
+:root {
+    --rainbow: linear-gradient(90deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: radial-gradient(circle at 50% 50%, #1a0033, #000000);
+    color: white;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+#fireworks {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Tańczący kotek */
+.dancing-cat {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+    height: 220px;
+    z-index: 10;
+    filter: drop-shadow(0 0 40px #ff00ff);
+    animation: float 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(-50%, -50%) rotate(-8deg); }
+    50% { transform: translate(-50%, -50%) rotate(8deg); }
+}
+
+nav {
+    position: fixed;
+    top: 0; width: 100%;
+    z-index: 1000;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo {
+    font-size: 2.2rem;
+    font-weight: 900;
+    background: var(--rainbow);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 300% 300%;
+    animation: rainbowFlow 6s linear infinite;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 8px 16px;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: all 0.4s;
+}
+
+.nav-links a:hover {
+    transform: scale(1.15) translateY(-3px);
+    background-position: 100% 50%;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #ff00cc, #00ffcc, #ffff00, #ff00cc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbowHero 8s ease infinite;
+}
+
+.cta-btn {
+    padding: 18px 48px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 50px;
+    background: var(--rainbow);
+    background-size: 300% 300%;
+    color: white;
+    cursor: pointer;
+    animation: rainbowFlow 4s linear infinite;
+    box-shadow: 0 0 40px rgba(255, 0, 255, 0.6);
+}
+
+.cta-btn:hover {
+    transform: scale(1.1);
+}
+
+@keyframes rainbowFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes rainbowHero {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
