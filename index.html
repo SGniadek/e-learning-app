@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="main.css">
     <script src="main.css" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <canvas id="fireworks"></canvas>
@@ -29,7 +30,20 @@
 
         <section class="tresci-edukacyjne"></section>
 
-        <section class="quiz"></section>
+        <section class="quiz">
+    <div class="quiz-container">
+        <h2 class="quiz-title">Test Wiedzy: Funkcje</h2>
+        <div id="question-container">
+            <p id="question-text">Ładowanie pytania...</p>
+            <div id="answer-buttons" class="btn-grid">>
+            </div>
+        </div>
+        <div id="result-container" class="hide">
+            <h3>Twój wynik: <span id="score">0</span>/4</h3>
+            <button id="restart-btn" class="cta-btn">Zagraj jeszcze raz</button>
+        </div>
+    </div>
+</section>
 
         <section class="bloczki"></section>
 
